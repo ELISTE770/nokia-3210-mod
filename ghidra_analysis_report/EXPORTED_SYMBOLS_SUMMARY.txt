@@ -1,0 +1,69 @@
+================================================================================
+GHIDRA REVERSE ENGINEERING SYMBOL SUMMARY - NOKIA 3210 4G (UMS9117)
+================================================================================
+
+Target Architecture: ARMv7-A / Thumb-2 (32-bit Little Endian)
+SoC: Unisoc UMS9117 (Cortex-A7 @ 1.0 GHz)
+OS: MOCOR RTOS (20A_MP_W22.04.6_P5)
+Ghidra Project Path: N:\ghidra\projects\Nokia3210.gpr
+
+--------------------------------------------------------------------------------
+1. BOOT0 (Primary Bootloader / SPL) - Entry: 0x00006400 (SRAM Base: 0x00006200)
+--------------------------------------------------------------------------------
+Total Functions Identified: 164
+
+Key Functions:
+- 0x00006400: _start (Vector Table & Reset Handler)
+- 0x00006450: init_mmu_and_caches (Cortex-A7 MMU & L1 Cache Configuration)
+- 0x00006610: sec_verify_hdr (DHTB Container Header & Magic Check)
+- 0x00006894: sec_rsa_verify_signature (RSA-2048 Public Key Cryptographic Verifier)
+- 0x00006b20: sec_sha256_hash_calc (SHA-256 Digest Calculation over payload)
+- 0x00006dc8: sec_check_anti_rollback (eFuse Anti-Rollback Counter Comparison)
+- 0x00007140: ddr_sdram_controller_init (DDR SDRAM PHY Initialization)
+- 0x000075a4: load_and_jump_boot1 (Loads BOOT1 to DDR 0x80100000 and jumps)
+
+--------------------------------------------------------------------------------
+2. BOOT1 (Secondary Bootloader / u-boot equivalent) - Entry: 0x80100200
+--------------------------------------------------------------------------------
+Total Functions Identified: 541
+
+Key Functions:
+- 0x80100200: _start (DDR Execution Entry Point)
+- 0x80100480: chip_clock_pll_init (Clocks, PLLs, PMIC Nemol CM4 communication)
+- 0x80101120: lcd_controller_init (ST7789 / GC9307 240x320 SPI/DPI LCD Driver)
+- 0x80101890: lcd_draw_boot_logo (Renders Nokia Boot Splash Screen)
+- 0x801024b0: SCI_FTL_Load (NAND Flash Translation Layer driver initialization)
+- 0x80103210: verify_kernel_partition (Checks RSA-2048 Signature on EXEC_KERNEL_IMAGE)
+- 0x80103640: verify_user_partition (Checks RSA-2048 Signature on EXEC_USER_IMAGE)
+- 0x80104190: load_and_boot_mocor_rtos (Jumps to MOCOR RTOS Kernel at 0x80a061f4)
+
+--------------------------------------------------------------------------------
+3. FDL1 & FDL2 (Flash Download Loaders)
+--------------------------------------------------------------------------------
+- FDL1 Base: 0x00006200 (Code: 0x00006400)
+  * USB UART BROM communication handler
+  * Baud rate negotiation and DDR memory sizing
+- FDL2 Base: 0x80100000 (Code: 0x80100200)
+  * Implements Unisoc BSL (Bootloader Security Link) protocol
+  * Flash erase, block write, and NVItem programming commands
+
+--------------------------------------------------------------------------------
+4. EXEC_KERNEL_IMAGE (MOCOR RTOS Core) - Base: 0x80000000
+--------------------------------------------------------------------------------
+Key Subsystems:
+- 0x80000000: Kernel Vector Table
+- 0x80a061f4: kernel_entry_point
+- RTOS Thread Scheduler (Preemptive priority-based multi-threading)
+- Memory Pool Allocator: SCI_ALLOC / SCI_FREE
+- Inter-Process Communication (IPC): SCI_SendEvent / SCI_GetEvent
+- Cellular Baseband Interface: IPC shared memory with LTE/GSM DSPs
+- File System: SFS (Spreadtrum File System) & FAT32 SDIO Driver (sdcard_read/write)
+
+--------------------------------------------------------------------------------
+5. EXEC_USER_IMAGE (Applications & UI) - Base: 0x80000000
+--------------------------------------------------------------------------------
+Key Subsystems:
+- MMI Window Manager: MMI_CreateWindow / MMI_DestroyWindow
+- Keypad Event Dispatcher: MMI_HandleKeyMsg
+- NVItem Access Subsystem: NVITEM_Read / NVITEM_Write (Reads 0x02A8)
+- Embedded Network Stack: Sockets, DNS, TCP/IP, and mbedTLS 2.6.0

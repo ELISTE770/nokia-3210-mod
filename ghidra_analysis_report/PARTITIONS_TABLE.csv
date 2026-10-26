@@ -1,0 +1,30 @@
+Index,PartitionID,FileName,Size_Bytes,Offset_PAC,Architecture,LoadAddress,HasDHTB,IsRSASigned,Description
+0,FDL,fdl1.bin,32596,76944,ARM:LE:32:v7,0x00006200,Yes,Yes,Flash Download Loader Stage 1 (USB handshake & DDR init)
+1,FDL2,fdl2.bin,63972,109540,ARM:LE:32:v7,0x80100000,Yes,Yes,Flash Download Loader Stage 2 (NAND flasher protocol)
+2,NV,FF638V01_64X128_QVGA_CF8_Q3_SKU2_DS_ICON_nvitem_QB_16ICN18HK00.bin,723880,173512,NVRAM Data,N/A,No,No,Hardware Calibration & Main Menu registry (Record 0x02A8)
+3,BOOT0,boot0.bin,31684,897392,ARM:LE:32:v7,0x00006200,Yes,Yes,Primary Bootloader (SPL) - Hardware init & signature verification
+4,BOOT1,boot1.bin,154948,929076,ARM:LE:32:v7,0x80100000,Yes,Yes,Secondary Bootloader - LCD init FTL flash driver kernel loader
+5,UserImg,EXEC_USER_IMAGE.bin,12230884,1084024,ARM:LE:32:v7,0x80000000,Yes,Yes,User Applications MMI UI engine HTTP stack & mbedTLS
+6,MMIRes,mmi_res_240X320_QB.bin,18605584,13314908,Resource Data,N/A,No,No,Fonts UI bitmaps and Hebrew/English UCS-2LE translation strings
+7,GSMDSPCODE,NEMOL_CAT1_EVS_DM_DSP.bin,2654208,31920492,CEVA DSP,N/A,Yes,Yes,GSM/2G and EVS voice modem firmware
+8,LTEDSPCODE,T117_CAT1_LTEA_DSP.bin,3145728,34574700,CEVA DSP,N/A,Yes,Yes,LTE Cat-1 VoLTE modem firmware
+9,OmadmFota,,0,0,N/A,N/A,No,No,FOTA firmware update partition placeholder
+10,Preload_Hidden,,0,0,N/A,N/A,No,No,Factory preloaded hidden data
+11,PreloadUdisk,,0,0,N/A,N/A,No,No,Factory preloaded USB disk data
+12,RomDisk,,0,0,N/A,N/A,No,No,Factory ROM disk
+13,ERASE HIDDEN_DISK_C,,0,0,N/A,N/A,No,No,Flash formatting command block
+14,EraseRunNV,,0,0,N/A,N/A,No,No,Runtime NV clear command block
+15,XFILE,,0,0,N/A,N/A,No,No,Extra file data block
+16,AUTOSMS,,0,0,N/A,N/A,No,No,Auto registration SMS block
+17,EraseDU,,0,0,N/A,N/A,No,No,Data unit erase command block
+18,PhaseCheck,,0,0,N/A,N/A,No,No,Production line QA test flag
+19,KernelImg,EXEC_KERNEL_IMAGE.bin,12947844,37720428,ARM:LE:32:v7,0x80000000,Yes,Yes,MOCOR RTOS Kernel (Scheduler memory management hardware drivers)
+20,CM4CODE,PM_nemol_cm4.bin,55500,50668272,ARM Cortex-M4,N/A,Yes,Yes,Power Management & low-power sleep controller firmware
+21,WIFICODE,,0,0,N/A,N/A,No,No,WiFi controller placeholder
+22,CM4CODE_AB,PM_nemol_cm4_AB.bin,463468,50723772,ARM Cortex-M4,N/A,Yes,Yes,Power Management Coprocessor Bank B
+23,DeltaNV,FF638V01_64X128_QVGA_CF8_Q3_SKU2_DS_ICON_deltanv.bin,56,51187240,NVRAM Data,N/A,No,No,Delta NV differences
+24,APN,apn.bin,540854,51187296,APN Data,N/A,No,No,Cellular Carrier APN configurations database
+25,IMSToggle,ims_toggle.bin,256,51728150,IMS Data,N/A,No,No,VoLTE/VoWiFi IMS registration flags
+26,EraseUserNV,,0,0,N/A,N/A,No,No,User NV reset command block
+27,Erase FS,,0,0,N/A,N/A,No,No,Filesystem wipe command block
+28,XML,UMS9117.xml,16942,51728406,XML Config,N/A,No,No,ResearchDownload chip flashing description schema

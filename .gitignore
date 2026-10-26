@@ -1,0 +1,41 @@
+# Large Firmware & PAC ROMs (Distributed via GitHub Releases)
+*.pac
+*.bin.bak
+backup_original_firmware/
+גיבוים/
+שונות/
+downloads/
+out/
+_DownloadFiles64E0_A641E99_0/
+ghidra/
+ghidra_inputs/
+toolchain/
+spd_research_tool_r23.19.3301/
+
+# External cloned repositories
+CVE-2022-38691_38692/
+fpdoom/
+spreadtrum_flash/
+
+# Build artifacts & temporary files
+__pycache__/
+*.py[cod]
+*.o
+*.elf
+*.map
+src/launcher/build/
+*.lnk
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Unrelated temporary scripts & assets
+hasidic_*
+generate_with_nano_banana.py
+processor.py
+
+

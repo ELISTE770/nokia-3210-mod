@@ -1,0 +1,41 @@
+# ====================================================================
+# Nokia 3210 4G (Unisoc UMS9117) - Smart Launcher System Configuration
+# ====================================================================
+
+[system]
+version=1.2.0
+device=Nokia_3210_4G_UMS9117
+safe_mode_key=0
+safe_mode_hold_ms=500
+ui_theme=nokia_dark
+screen_timeout_sec=30
+autostart_app=none
+
+[network]
+tls_backend=bearssl
+user_agent=Nokia3210-Smart/1.0 (UMS9117; MOCOR RTOS)
+timeout_ms=10000
+
+[micropython]
+enabled=1
+heap_size_kb=512
+gc_threshold_kb=64
+lib_path=/nokia/lib
+apps_path=/nokia/apps/launcher_only
+standalone_path=/nokia/apps/standalone
+
+[j2me]
+enabled=1
+vm_path=/nokia/lib/j2me/j2me_runner.bin
+config_path=/nokia/lib/j2me/j2me.cfg
+heap_size_mb=8
+rms_path=/nokia/data/rms
+supported_profiles=MIDP-2.0,CLDC-1.1
+
+[linux]
+enabled=1
+bootloader=/nokia/apps/launcher_only/linux/boot_linux.bin
+cmdline_path=/nokia/apps/launcher_only/linux/cmdline.txt
+kernel_path=/nokia/apps/launcher_only/linux/zImage
+initramfs_path=/nokia/apps/launcher_only/linux/initramfs.cpio.gz
+ram_limit_mb=64

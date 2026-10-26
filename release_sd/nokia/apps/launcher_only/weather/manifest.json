@@ -1,0 +1,8 @@
+{
+  "name": "Weather Live",
+  "version": "1.0.0",
+  "entry": "main.py",
+  "category": "utility",
+  "author": "Nokia Mod Team",
+  "description": "Live weather forecasts via Open-Meteo REST API"
+}

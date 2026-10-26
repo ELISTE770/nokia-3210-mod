@@ -1,0 +1,1 @@
+console=tty0 fbcon=rotate:0 root=/dev/ram0 rdinit=/init quiet loglevel=3 mem=64M

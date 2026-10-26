@@ -1,0 +1,9 @@
+{
+  "name": "Camera Pro",
+  "version": "1.0.0",
+  "entry": "app.bin",
+  "category": "standalone",
+  "type": "standalone_phone_menu",
+  "author": "Nokia Mod Team",
+  "description": "Standalone High-Resolution Camera App mapped to phone menu shortcut"
+}

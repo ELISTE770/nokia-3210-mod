@@ -1,0 +1,8 @@
+{
+  "name": "File Manager",
+  "version": "1.0.0",
+  "entry": "main.py",
+  "category": "tools",
+  "author": "Nokia Mod Team",
+  "description": "SD Card file and directory explorer"
+}

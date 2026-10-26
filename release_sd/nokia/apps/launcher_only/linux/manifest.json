@@ -1,0 +1,10 @@
+{
+  "name": "Alpine Linux",
+  "version": "3.19",
+  "entry": "boot_linux.bin",
+  "category": "system",
+  "type": "os_kernel",
+  "author": "fplinux project",
+  "icon": "icon.bmp",
+  "description": "Boot full Alpine Linux environment on Nokia 3210 4G (Cortex-A7)"
+}

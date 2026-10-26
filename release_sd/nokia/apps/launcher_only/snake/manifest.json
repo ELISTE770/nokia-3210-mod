@@ -1,0 +1,9 @@
+{
+  "name": "Snake Pro",
+  "version": "1.0.0",
+  "entry": "app.bin",
+  "category": "games",
+  "type": "native_arm",
+  "author": "Nokia Mod Team",
+  "description": "Retro Snake engine with modern smooth controls"
+}

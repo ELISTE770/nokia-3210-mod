@@ -1,0 +1,10 @@
+{
+  "name": "Bounce Tales",
+  "version": "1.0.0",
+  "entry": "bounce.jar",
+  "category": "games",
+  "type": "j2me_midlet",
+  "author": "Nokia / Rovio",
+  "icon": "icon.bmp",
+  "description": "Legendary Nokia Bounce Tales Java game running via J2ME engine"
+}

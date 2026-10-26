@@ -1,0 +1,9 @@
+{
+  "name": "Gemini AI",
+  "version": "1.0.0",
+  "entry": "main.py",
+  "category": "ai_assistant",
+  "author": "Nokia Mod Team",
+  "icon": "icon.bmp",
+  "description": "Google Gemini conversational assistant for Nokia 3210 4G"
+}
